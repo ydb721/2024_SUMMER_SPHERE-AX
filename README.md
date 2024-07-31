@@ -5,50 +5,6 @@
   />
 </div>
 
-<div style="display: flex; justify-content: space-between">
-  <div style="width: 50%">
-    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
-      🛠️ Front-end
-    </h3>
-    <!-- Front-end -->
-    <img
-      src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"
-    />
-    <img
-      src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"
-    />
-    <img
-      src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"
-    />
-    <img
-      src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white"
-    />
-    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
-      🛠️ Back-end
-    </h3>
-    <!-- Back-end -->
-    <img
-      src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white"
-    />
-    <img
-      src="https://img.shields.io/badge/Tomcat-F8DC75?style=for-the-badge&logo=Apache%20Tomcat&logoColor=white"
-    />
-    <img
-      src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white"
-    />
-    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
-      🛠️ Database
-    </h3>
-    <!-- Database -->
-    <img
-      src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"
-    />
-    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">🛠️ Network</h3>
-    <!-- Network -->
-    <img
-      src="https://img.shields.io/badge/WebSocket-FF6F00?style=for-the-badge&logo=WebSocket&logoColor=white"
-    />
-  </div>
   <div
     style="
       width: 50%;
@@ -108,9 +64,54 @@
     </table>
   </div>
 </div>
+  <br />
+  <br />
+<div style="display: flex; justify-content: space-between">
+  <div style="width: 50%">
+    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
+      🛠️ Front-end
+    </h3>
+    <!-- Front-end -->
+    <img
+      src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"
+    />
+    <img
+      src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"
+    />
+    <img
+      src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"
+    />
+    <img
+      src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white"
+    />
+    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
+      🛠️ Back-end
+    </h3>
+    <!-- Back-end -->
+    <img
+      src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white"
+    />
+    <img
+      src="https://img.shields.io/badge/Tomcat-F8DC75?style=for-the-badge&logo=Apache%20Tomcat&logoColor=white"
+    />
+    <img
+      src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white"
+    />
+    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">
+      🛠️ Database
+    </h3>
+    <!-- Database -->
+    <img
+      src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white"
+    />
+    <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">🛠️ Network</h3>
+    <!-- Network -->
+    <img
+      src="https://img.shields.io/badge/WebSocket-FF6F00?style=for-the-badge&logo=WebSocket&logoColor=white"
+    />
+  </div>
 
-<br />
-<br />
+
 <br />
 <br />
 <h3 style="border-bottom: 1px solid #d8dee4; color: #282d33">🔥 READ</h3>
