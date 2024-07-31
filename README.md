@@ -5,6 +5,7 @@
   />
 </div>
 
+  <br />
   <div align="center">
     <table
       style="
@@ -57,7 +58,6 @@
     </table>
   </div>
 </div>
-  <br />
   <br />
 <div style="display: flex; justify-content: space-between">
   <div style="width: 50%">
