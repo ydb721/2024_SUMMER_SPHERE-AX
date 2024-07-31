@@ -5,19 +5,12 @@
   />
 </div>
 
-  <div
-    style="
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    "
-  >
+  <div align="center">
     <table
       style="
         border-collapse: separate;
         border-spacing: 5px;
-        width: 70%;
+        width: 80%;
         border-radius: 10px;
         overflow: hidden;
         text-align: center;
