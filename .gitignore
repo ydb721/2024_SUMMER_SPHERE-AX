@@ -1,0 +1,39 @@
+# Front-end
+
+front-end/.gitattributes
+front-end/node_modules/
+
+front-end/babel.config.js
+front-end/package-lock.json
+front-end/jsconfig.json
+front-end/README.md
+
+front-end/.DS_Store
+node_modules
+front-end/dist
+
+
+# local env files
+front-end/.env
+front-end/.env.local
+front-end/.env.*.local
+
+# Log files
+front-end/npm-debug.log*
+front-end/yarn-debug.log*
+front-end/yarn-error.log*
+front-end/pnpm-debug.log*
+
+
+# Back-end
+#Backend/.env
+
+
+# Editor
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
