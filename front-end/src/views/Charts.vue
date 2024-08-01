@@ -1,31 +1,37 @@
 <template>
-  <div class="container-fluid charts-container" style="margin-top: 7%;">
+  <div class="container-fluid charts-container">
     <div class="row">
-      <div class="col chart-box">
-        Temperature
+      <div class="col-md-6 chart-box">
+        <div class="chart-title">Temperature</div>
         <Line id="tempChart" :data="tempData" :options="chartOptions" />
       </div>
-      <div class="col chart-box">
-        Humidity
+      <div class="col-md-6 chart-box">
+        <div class="chart-title">Humidity</div>
         <Line id="humidityChart" :data="humidityData" :options="chartOptions" />
-      </div>
-      <div class="col chart-box">
-        Pressure
-        <Line id="pressureChart" :data="presData" :options="chartOptions" />
       </div>
     </div>
     <div class="row">
-      <div class="col chart-box">
-        WindSpeed
+      <div class="col-md-6 chart-box">
+        <div class="chart-title">Pressure</div>
+        <Line id="pressureChart" :data="presData" :options="chartOptions" />
+      </div>
+      <div class="col-md-6 chart-box">
+        <div class="chart-title">WindSpeed</div>
         <Line id="windSpeedChart" :data="windSpeedData" :options="chartOptions" />
       </div>
-      <div class="col chart-box">
-        WindDirection
+    </div>
+    <div class="row">
+      <div class="col-md-6 chart-box">
+        <div class="chart-title">WindDirection</div>
         <Line id="windDirChart" :data="windDirectionData" :options="chartOptions" />
+      </div>
+      <div class="col-md-6 chart-box text-center d-flex justify-content-center align-items-center">
+        <span class="current-data-id">Current Data ID : {{ displayedData.id }}</span>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import 'chart.js/auto';
@@ -44,8 +50,14 @@ export default {
       'presData',
       'humidityData',
       'windSpeedData',
-      'windDirectionData'
-    ])
+      'windDirectionData',
+      'id'
+    ]),
+    displayedData() {
+      return {
+        id: this.id ?? 0
+      };
+    }
   },
   data() {
     return {
@@ -61,9 +73,9 @@ export default {
         responsive: true,
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: false,
             ticks: {
-              color: '#000'
+              color: '#FFFFFF'
             },
             border: {
               dash: [5, 10]
@@ -90,6 +102,8 @@ export default {
 <style>
 .container-fluid {
   padding: 0px;
+  width: 100%;
+  height: 10%;
 }
 
 .charts-container {
@@ -114,5 +128,16 @@ export default {
 
 .chart-box {
   padding: 10px;
+}
+
+.chart-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.current-data-id {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 </style>

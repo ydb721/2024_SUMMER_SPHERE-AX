@@ -33,7 +33,8 @@ const routes = [
           presData: route.params.presData,
           humidityData: route.params.humidityData,
           windSpeedData: route.params.windSpeedData,
-          windDirectionData: route.params.windDirectionData
+          windDirectionData: route.params.windDirectionData,
+          id: route.params.id
         })
       }
     ]
