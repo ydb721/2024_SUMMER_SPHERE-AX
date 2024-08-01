@@ -1,5 +1,5 @@
 <template>
-  <div class="frame-16" style="justify-content: center; margin-top: 5vh;">
+  <div class="frame-16" style="justify-content: center; margin-top: 10vh;">
     <div class="frame-9">
       <div class="frame-4">
         <div class="nav-bar">
