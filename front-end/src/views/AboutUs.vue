@@ -87,7 +87,7 @@ export default {
 .contributors-table {
   border-collapse: separate;
   border-spacing: 5px;
-  width: 20%;
+  width: 30%;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
