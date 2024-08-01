@@ -7,14 +7,16 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
     </bean>
-
+    
+    <!-- dataSource 설정 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="${DB_URL}" />
         <property name="username" value="${DB_USER}" />
         <property name="password" value="${DB_PASS}" />
     </bean>
-
+    
+    <!-- JdbcTemplate 설정 -->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource" />
     </bean>
@@ -24,6 +26,7 @@
         <property name="jdbcTemplate" ref="jdbcTemplate" />
     </bean>
 
+    <!-- Service 빈 설정 -->
     <bean id="weatherDataService" class="com.weather.service.WeatherDataService">
         <property name="weatherDataDAO" ref="weatherDataDAO" />
     </bean>

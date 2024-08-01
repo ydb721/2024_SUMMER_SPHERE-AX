@@ -21,7 +21,7 @@ export default {
 <style>
 body {
     background-color: black;
-    color: red
+    color: white;
 }
 
 #show-routes {
