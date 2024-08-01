@@ -15,6 +15,7 @@ const vuexLocal = new VuexPersistence({
 
 const store = createStore({
   state: {
+    id: null,
     allData: null,
     tempData: [],
     presData: [],
@@ -45,6 +46,9 @@ const store = createStore({
     },
     setChartLabels(state, labels) {
       state.Chartlabels = labels;
+    },
+    setID(state, id) {
+      state.id = id;
     }
   },
   actions: {
@@ -64,6 +68,7 @@ const store = createStore({
         return updatedArray;
       };
 
+      commit('setID', id);
       commit('setAllData', data);
       commit('setChartLabels', newLabels);
       commit('setTempData', updateDataArray(state.tempData, Temperature));
@@ -75,6 +80,7 @@ const store = createStore({
   },
   getters: {
     allData: state => state.allData,
+    id: state => state.id,
     tempData: state => ({
       labels: state.Chartlabels,
       datasets: [{
