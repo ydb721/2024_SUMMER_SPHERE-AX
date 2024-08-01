@@ -4,6 +4,8 @@ import { VuexPersistence } from 'vuex-persist';
 const vuexLocal = new VuexPersistence({
   storage: window.sessionStorage,
   reducer: (state) => ({
+    id: state.id,
+    allData: state.allData,
     tempData: state.tempData,
     presData: state.presData,
     humidityData: state.humidityData,
@@ -11,7 +13,17 @@ const vuexLocal = new VuexPersistence({
     windDirectionData: state.windDirectionData,
     Chartlabels: state.Chartlabels,
   })
-})
+});
+
+// const directions = [
+//   'N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE',
+//   'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'
+// ];
+
+const directions = [
+  '북', '북북동', '북동', '동북동', '동', '동남동', '남동', '남남동',
+  '남', '남남서', '남서', '서남서', '서', '서북서', '북서', '북북서'
+];
 
 const store = createStore({
   state: {
@@ -19,9 +31,9 @@ const store = createStore({
     allData: null,
     tempData: [],
     presData: [],
-    humidityData: [],
+    humidityData: null,
     windSpeedData: [],
-    windDirectionData: [],
+    windDirectionData: null,
     Chartlabels: [],
     maxLength: 20
   },
@@ -71,11 +83,11 @@ const store = createStore({
       commit('setID', id);
       commit('setAllData', data);
       commit('setChartLabels', newLabels);
+      commit('setHumidityData', Humidity);
+      commit('setWindDirectionData', directions[WindDirection - 1]);
       commit('setTempData', updateDataArray(state.tempData, Temperature));
       commit('setPresData', updateDataArray(state.presData, Pressure));
-      commit('setHumidityData', updateDataArray(state.humidityData, Humidity));
       commit('setWindSpeedData', updateDataArray(state.windSpeedData, WindSpeed));
-      commit('setWindDirectionData', updateDataArray(state.windDirectionData, WindDirection));
     }
   },
   getters: {
@@ -88,7 +100,7 @@ const store = createStore({
         data: state.tempData,
         borderWidth: 3,
         backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
+        borderColor: '#FFFFFF',
         tension: 0.3,
         pointRadius: 0
       }]
@@ -100,21 +112,20 @@ const store = createStore({
         data: state.presData,
         borderWidth: 3,
         backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
+        borderColor: '#FFFFFF',
         tension: 0.3,
         pointRadius: 0
       }]
     }),
     humidityData: state => ({
-      labels: state.Chartlabels,
+      labels: ['Humidity', '.'],
       datasets: [{
-        label: 'Humidity',
-        data: state.humidityData,
-        borderWidth: 3,
-        backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
-        tension: 0.3,
-        pointRadius: 0
+        borderWidth: 0,
+        backgroundColor: ["#FFFFFF", "#151515"],
+        hoverBackgroundColor: ["#FFFFFF", "#000000"],
+        hoverBorderColor: ["#FFFFFF", "#000000"],
+        hoverBorderWidth: 0,
+        data: [state.humidityData, 100 - state.humidityData]
       }]
     }),
     windSpeedData: state => ({
@@ -124,23 +135,12 @@ const store = createStore({
         data: state.windSpeedData,
         borderWidth: 3,
         backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
+        borderColor: '#FFFFFF',
         tension: 0.3,
         pointRadius: 0
       }]
     }),
-    windDirectionData: state => ({
-      labels: state.Chartlabels,
-      datasets: [{
-        label: 'Wind Direction',
-        data: state.windDirectionData,
-        borderWidth: 3,
-        backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
-        tension: 0.3,
-        pointRadius: 0
-      }]
-    })
+    windDirectionData: state => state.windDirectionData
   },
   plugins: [vuexLocal.plugin]
 });
