@@ -11,7 +11,7 @@ import com.weather.service.WeatherDataService;
 import com.weather.model.WeatherData;
 
 public class TCPServer {
-    private static final int PORT = Integer.parseInt(System.getenv("SERVER_PORT"));
+    private static final int PORT = Integer.parseInt(System.getenv("SERVER_PORT"));		// 서버 포트 번호를 환견변수에서 가져옴
 
     public static void main(String[] args) {
         // try-with-resources 구문을 사용하여 ApplicationContext를 자동으로 닫도록 함
@@ -22,7 +22,8 @@ public class TCPServer {
                 System.out.println("WeatherDataService bean is not created");
                 return;
             }
-
+            
+            // ServerSocket을 생성하고 클라이언트 연결을 기다림
             try (ServerSocket serverSocket = new ServerSocket(PORT)) {
                 System.out.println("Server started on port " + PORT);
 
@@ -30,6 +31,7 @@ public class TCPServer {
                     try (Socket clientSocket = serverSocket.accept();
                          BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
+                    	// 클라이언트로부터 데이터 수신
                         String receivedData = in.readLine();
                         System.out.println("Received: " + receivedData);
 
