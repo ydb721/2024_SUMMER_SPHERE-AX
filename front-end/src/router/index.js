@@ -22,7 +22,8 @@ const routes = [
         path: '/rawData',
         component: RawData,
         props: (route) => ({
-          allData: route.params.allData
+          allData: route.params.allData,
+          windDirectionData: route.params.windDirectionData
         })
       },
       {

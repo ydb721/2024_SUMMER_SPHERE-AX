@@ -31,27 +31,27 @@
       <div class="frame-10">
         <div class="frame-4">
           <div class="nav-bar">
-            <div class="nav">{{  displayedData.Temperature  }}</div>
+            <div class="nav">{{ displayedData.allData.Temperature }}</div>
           </div>
         </div>
         <div class="frame-92">
           <div class="nav-bar">
-            <div class="nav">{{  displayedData.Humidity }}</div>
+            <div class="nav">{{ displayedData.allData.Humidity }}</div>
           </div>
         </div>
         <div class="frame-6">
           <div class="nav-bar">
-            <div class="nav">{{  displayedData.Pressure  }}</div>
+            <div class="nav">{{ displayedData.allData.Pressure }}</div>
           </div>
         </div>
         <div class="frame-7">
           <div class="nav-bar">
-            <div class="nav">{{  displayedData.WindSpeed  }}</div>
+            <div class="nav">{{ displayedData.allData.WindSpeed }}</div>
           </div>
         </div>
         <div class="frame-8">
           <div class="nav-bar">
-            <div class="nav">{{  displayedData.WindDirection  }}</div>
+            <div class="nav">{{ displayedData.windDirectionData }}</div>
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
         </div>
         <div class="frame-8">
           <div class="nav-bar">
-            <div class="nav">.</div>
+            <div class="nav">향</div>
           </div>
         </div>
       </div>
@@ -92,14 +92,20 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'RawData',
   computed: {
-    ...mapGetters(['allData']),
+    ...mapGetters([
+      'allData',
+      'windDirectionData'
+    ]),
     displayedData() {
-      return this.allData ?? {
-        Temperature: 0,
-        Humidity: 0,
-        Pressure: 0,
-        WindSpeed: 0,
-        WindDirection: 0
+      return {
+        allData: this.allData ?? {
+          Temperature: 0,
+          Humidity: 0,
+          Pressure: 0,
+          WindSpeed: 0,
+          WindDirection: 0
+        },
+        windDirectionData: this.windDirectionData ?? 'none'
       };
     }
   }
@@ -113,6 +119,7 @@ export default {
 .frame-16 * {
   box-sizing: border-box;
 }
+
 .frame-16 {
   display: flex;
   flex-direction: row;
@@ -121,6 +128,7 @@ export default {
   justify-content: flex-start;
   position: relative;
 }
+
 .frame-9 {
   display: flex;
   flex-direction: column;
@@ -131,6 +139,7 @@ export default {
   height: 718px;
   position: relative;
 }
+
 .frame-4 {
   padding: 10px;
   display: flex;
@@ -142,6 +151,7 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -152,12 +162,11 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .nav {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(199, 199, 199, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(199, 199, 199, 1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -167,6 +176,7 @@ export default {
   font-weight: 700;
   position: relative;
 }
+
 .frame-92 {
   padding: 10px;
   display: flex;
@@ -178,6 +188,7 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .frame-6 {
   padding: 10px;
   display: flex;
@@ -189,6 +200,7 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .frame-7 {
   padding: 10px;
   display: flex;
@@ -200,6 +212,7 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .frame-8 {
   padding: 10px;
   display: flex;
@@ -211,6 +224,7 @@ export default {
   flex-shrink: 0;
   position: relative;
 }
+
 .frame-12 {
   display: flex;
   flex-direction: row;
@@ -222,6 +236,7 @@ export default {
   height: 718px;
   position: relative;
 }
+
 .frame-10 {
   display: flex;
   flex-direction: column;
@@ -232,6 +247,7 @@ export default {
   height: 718px;
   position: relative;
 }
+
 .frame-11 {
   display: flex;
   flex-direction: column;
@@ -242,5 +258,4 @@ export default {
   height: 718px;
   position: relative;
 }
-
 </style>
