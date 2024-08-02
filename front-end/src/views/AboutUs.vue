@@ -97,6 +97,7 @@ export default {
 .table-cell {
   border: 1px solid white;
   padding: 8px;
+  color: #fff;
 }
 
 .table-link {

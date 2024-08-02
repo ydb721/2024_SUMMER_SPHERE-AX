@@ -31,11 +31,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 10%;
   padding: 1rem;
   font-weight: bolder;
   font-size: larger;
   color: white;
-  z-index: 20; /* 글자가 배경 위에 표시되도록 설정 */
+  /* 글자가 배경 위에 표시되도록 설정 */
+  z-index: 20;
 }
 
 #logo-item {

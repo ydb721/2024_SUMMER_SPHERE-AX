@@ -143,6 +143,7 @@ export default {
 
 .row {
   margin: 10px;
+  color: #fff;
 }
 
 .col {
