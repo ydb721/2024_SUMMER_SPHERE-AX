@@ -200,5 +200,104 @@ body {
   text-align: center;
   line-height: 1.8em;
 }
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .legend-container {
+    bottom: 5%;
+    gap: 15px;
+  }
+
+  .legend-item {
+    width: 12px;
+    height: 12px;
+  }
+
+  .legend-item .diamond {
+    width: 12px;
+    height: 12px;
+  }
+
+  .legend-item .timer-circle {
+    width: 27px;
+    height: 27px;
+  }
+
+
+  .centered-text {
+    font-size: 2.4rem; /* 중간 화면에서의 폰트 크기 조정 */
+    margin-top: 1vh; /* 제목과의 간격 조정 */
+  }
+
+  .centered-text1 {
+    font-size: 1.2rem; /* 중간 화면에서의 폰트 크기 조정 */
+    margin-top: 3rem; /* 제목과의 간격 조정 */
+    line-height: 100%;
+
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .legend-container {
+    bottom: 7%;
+    gap: 20px;
+  }
+
+  .legend-item {
+    width: 15px;
+    height: 15px;
+  }
+
+  .legend-item .diamond {
+    width: 15px;
+    height: 15px;
+  }
+
+  .legend-item .timer-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .centered-text {
+    font-size: 4rem; /* 큰 화면에서의 폰트 크기 조정 */
+  }
+
+  .centered-text1 {
+    font-size: 1.4rem; /* 큰 화면에서의 폰트 크기 조정 */
+    margin-top: 3rem; /* 제목과의 간격 조정 */
+  }
+}
+
+@media (min-width: 1025px) {
+  .legend-container {
+    bottom: 10%;
+    gap: 50px;
+  }
+
+  .legend-item {
+    width: 15px;
+    height: 15px;
+  }
+
+  .legend-item .diamond {
+    width: 15px;
+    height: 15px;
+  }
+
+  .legend-item .timer-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .centered-text {
+    font-size: 5rem;
+  }
+
+  .centered-text1 {
+    font-size: 1.5rem;
+    margin-top: 2rem; /* 제목과의 간격 조정 */
+  }
+  
+}
 </style>
   
