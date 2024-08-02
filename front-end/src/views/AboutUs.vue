@@ -3,10 +3,10 @@
     <div class="img-container">
       <img src="https://i.vimeocdn.com/video/1900935094-1e2ddcdefc344bdea03046a5c9795e1cc775ceabadcac497db754d9202838663-d_640?f=webp" />
     </div>
-
+    <br />
     <div align="center">
       <a href="https://github.com/sty0133/2024_SUMMER_SPHERE-AX" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub Repo-181717?style=for-the-badge&logo=github&logoColor=white" class="badge-link" />
+        <img src="https://img.shields.io/badge/GitHub Repo-181717?style=for-the-badge&logo=github&logoColor=white" class="badge-link"  style="width: 25vw;"/>
       </a>
 
       <table class="contributors-table">
@@ -87,7 +87,7 @@ export default {
 .contributors-table {
   border-collapse: separate;
   border-spacing: 5px;
-  width: 20%;
+  width: 30%;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
