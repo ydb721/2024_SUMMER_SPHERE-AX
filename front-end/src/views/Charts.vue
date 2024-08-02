@@ -14,18 +14,18 @@
         <Line id="tempChart" :data="tempData" :options="chartOptions" />
       </div>
       <div class="col-md-6 chart-box">
-        <div class="chart-title">Humidity (%)</div>
-        <Doughnut id="humidityChart" :data="humidityData" :options="humidityOptions" />
+        <div class="chart-title">WindSpeed (m / s)</div>
+        <Line id="windSpeedChart" :data="windSpeedData" :options="chartOptions" />
       </div>
     </div>
     <div class="row">
       <div class="col-md-6 chart-box">
         <div class="chart-title">Pressure (hPa)</div>
-        <Line id="pressureChart" :data="presData" :options="chartOptions" />
+        <Bar id="pressureChart" :data="presData" :options="chartOptions" />
       </div>
       <div class="col-md-6 chart-box">
-        <div class="chart-title">WindSpeed (m / s)</div>
-        <Line id="windSpeedChart" :data="windSpeedData" :options="chartOptions" />
+        <div class="chart-title">Humidity (%)</div>
+        <Doughnut id="humidityChart" :data="humidityData" :options="humidityOptions" />
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
 
 <script>
 import 'chart.js/auto';
-import { Line, Doughnut } from 'vue-chartjs';
+import { Line, Doughnut, Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
 import { mapGetters } from 'vuex';
 
@@ -42,7 +42,7 @@ ChartJS.register(PointElement, Title, Tooltip, Legend, BarElement, CategoryScale
 
 export default {
   name: 'Realtime-Charts',
-  components: { Line, Doughnut },
+  components: { Line, Doughnut, Bar },
   computed: {
     ...mapGetters([
       'tempData',   //기온, 0 ~ 40
