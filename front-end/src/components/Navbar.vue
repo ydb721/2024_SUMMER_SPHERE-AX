@@ -40,6 +40,10 @@ export default {
   z-index: 20;
 }
 
+#nav-style li > a:hover {
+  color: rgb(128, 128, 128);
+}
+
 #logo-item {
   margin-right: auto;
   padding-left: 10%;
