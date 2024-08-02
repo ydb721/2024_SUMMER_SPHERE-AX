@@ -124,4 +124,47 @@
     padding-right: 10%;
     z-index: 2;
   }
+
+  /* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .background-container {
+    object-fit: cover;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .background-container {
+    object-fit: cover;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .background-container {
+    object-fit: cover;
+  }
+  .background-image{
+    width: 100;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .background-container {
+    object-fit: cover;
+  }
+  .background-image{
+    width: 100%;
+    height: 100%;
+  }
+}
   </style>

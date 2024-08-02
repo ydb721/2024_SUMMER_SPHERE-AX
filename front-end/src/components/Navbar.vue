@@ -72,4 +72,65 @@ a {
 a.router-link-active {
   font-weight: bold;
 }
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  #nav-style {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  #comp-logo {
+    height: 25px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #nav-style {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #comp-logo {
+    height: 30px;
+  }
+
+  nav ul {
+    gap: 2rem;
+  }
+
+  a {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #nav-style {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #comp-logo {
+    height: 35px;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+
+  a {
+    font-size: 25px;
+  }
+}
 </style>

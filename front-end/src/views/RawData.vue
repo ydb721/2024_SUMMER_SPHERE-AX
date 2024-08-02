@@ -258,4 +258,79 @@ export default {
   height: 718px;
   position: relative;
 }
+
+/* 반응형 디자인 추가 */
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 600%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 600%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 400%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+  .nav {
+    font-size: 16px;
+  }
+}
+
 </style>
