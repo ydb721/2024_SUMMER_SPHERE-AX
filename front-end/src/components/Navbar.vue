@@ -20,23 +20,22 @@ export default {
 
 <style>
 @import '../vars.css';
+
 .fv-font {
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(199, 199, 199, 1) 100%);
+  position: relative;
+  background: rgba(0, 0, 0, 0.01); /* 검정색 반투명 배경 */
+  z-index: 10; /* 오버레이가 다른 요소보다 위에 위치하도록 설정 */
 }
 
 #nav-style {
-  background-color: #000000;
-  color: white;
-  padding: 1rem;
-  font-weight: bolder;
-  font-size: larger;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10%;
-  padding-top: 2%;
+  padding: 1rem;
+  font-weight: bolder;
+  font-size: larger;
+  color: white;
+  z-index: 20; /* 글자가 배경 위에 표시되도록 설정 */
 }
 
 #logo-item {
