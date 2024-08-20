@@ -1,88 +1,62 @@
 <template>
-  <div class="frame-16" style="justify-content: center; margin-top: 10vh;">
-    <div class="frame-9">
-      <div class="frame-4">
-        <div class="nav-bar">
-          <div class="nav">Temperature</div>
+  <div class="main">
+  <div class="frame-21">
+    <div class="temp">
+      <div class="frame-13">
+        <div class="frame">
+          <img class="temperature" src="../assets/rawdata-img/temperature0.png" />
+          <div class="temperature2">Temperature</div>
         </div>
-      </div>
-      <div class="frame-92">
-        <div class="nav-bar">
-          <div class="nav">Humidity</div>
-        </div>
-      </div>
-      <div class="frame-6">
-        <div class="nav-bar">
-          <div class="nav">Pressure</div>
-        </div>
-      </div>
-      <div class="frame-7">
-        <div class="nav-bar">
-          <div class="nav">Wind Speed</div>
-        </div>
-      </div>
-      <div class="frame-8">
-        <div class="nav-bar">
-          <div class="nav">Wind Direction</div>
+        <div class="temp-data">
+          <div class="_100-c">{{ displayedData.allData.Temperature }} °C</div>
         </div>
       </div>
     </div>
-    <div class="frame-12">
-      <div class="frame-10">
-        <div class="frame-4">
-          <div class="nav-bar">
-            <div class="nav">{{ displayedData.allData.Temperature }}</div>
-          </div>
+    <div class="hum">
+      <div class="frame-16">
+        <div class="frame-14">
+          <img class="hygrometer" src="../assets/rawdata-img/hygrometer0.png" />
+          <div class="humidity">Humidity</div>
         </div>
-        <div class="frame-92">
-          <div class="nav-bar">
-            <div class="nav">{{ displayedData.allData.Humidity }}</div>
-          </div>
-        </div>
-        <div class="frame-6">
-          <div class="nav-bar">
-            <div class="nav">{{ displayedData.allData.Pressure }}</div>
-          </div>
-        </div>
-        <div class="frame-7">
-          <div class="nav-bar">
-            <div class="nav">{{ displayedData.allData.WindSpeed }}</div>
-          </div>
-        </div>
-        <div class="frame-8">
-          <div class="nav-bar">
-            <div class="nav">{{ displayedData.windDirectionData }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="frame-11">
-        <div class="frame-4">
-          <div class="nav-bar">
-            <div class="nav">°C</div>
-          </div>
-        </div>
-        <div class="frame-92">
-          <div class="nav-bar">
-            <div class="nav">%</div>
-          </div>
-        </div>
-        <div class="frame-6">
-          <div class="nav-bar">
-            <div class="nav">hPa</div>
-          </div>
-        </div>
-        <div class="frame-7">
-          <div class="nav-bar">
-            <div class="nav">m / s</div>
-          </div>
-        </div>
-        <div class="frame-8">
-          <div class="nav-bar">
-            <div class="nav">향</div>
-          </div>
+        <div class="hum-data">
+          <div class="_70">{{ displayedData.allData.Humidity }} %</div>
         </div>
       </div>
     </div>
+    <div class="press">
+      <div class="frame-18">
+        <div class="frame-17">
+          <img class="pressure-gauge" src="../assets/rawdata-img/pressure-gauge0.png" />
+          <div class="pressure">Pressure</div>
+        </div>
+        <div class="pres-data">
+          <div class="_998-7-h-pa">{{ displayedData.allData.Pressure }} hPa</div>
+        </div>
+      </div>
+    </div>
+    <div class="dir">
+      <div class="frame-20">
+        <div class="frame-172">
+          <img class="north-direction" src="../assets/rawdata-img/north-direction0.png" />
+          <div class="wind-direction">Wind Direction</div>
+        </div>
+        <div class="ws-data">
+          <div class="dir2">{{ displayedData.windDirectionData }} 향</div>
+        </div>
+      </div>
+    </div>
+    <div class="wind-speed">
+      <div class="frame-19">
+        <div class="frame-173">
+          <img class="wind-speed-18-22" src="../assets/rawdata-img/wind-speed-18-220.png" />
+          <div class="wind-speed2">Wind Speed</div>
+        </div>
+        <div class="ws-data">
+          <div class="_15-7-m-s">{{ displayedData.allData.WindSpeed }} m / s</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -115,147 +89,175 @@ export default {
 <style>
 @import '../vars.css';
 
-.frame-16,
-.frame-16 * {
-  box-sizing: border-box;
+.main {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center;     /* 수직 중앙 정렬 */
+  height: 80vh;
+  margin: 0;
 }
 
-.frame-16 {
+.frame-21 {
   display: flex;
   flex-direction: row;
-  gap: 200px;
-  align-items: center;
+  gap: 42px;
+  row-gap: 41px;
+  align-items: flex-start;
   justify-content: flex-start;
-  position: relative;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 1098px;
+  position: absolute;
+  top: 20vh;
 }
 
-.frame-9 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-  width: 305px;
-  height: 718px;
-  position: relative;
-}
-
-.frame-4 {
-  padding: 10px;
+.temp, .hum, .press, .dir, .wind-speed {
+  background: rgba(217, 217, 217, 0);
+  padding: 27px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  gap: 0px;
+  row-gap: 0px;
   align-items: center;
   justify-content: center;
-  align-self: stretch;
   flex-shrink: 0;
+  width: 338px;
+  height: 164px;
   position: relative;
 }
 
-.nav {
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(199, 199, 199, 1) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: left;
-  font-family: "Inter-Bold", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  position: relative;
-}
-
-.frame-92 {
-  padding: 10px;
+.frame-13, .frame-16, .frame-18, .frame-20, .frame-19 {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
+  gap: 1px;
+  row-gap: 0px;
+  align-items: center;
   justify-content: flex-start;
-  align-self: stretch;
   flex-shrink: 0;
   position: relative;
 }
 
-.frame-6 {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.frame-7 {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.frame-8 {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.frame-12 {
+.frame, .frame-14, .frame-17, .frame-172, .frame-173 {
   display: flex;
   flex-direction: row;
-  gap: 0px;
-  align-items: center;
-  justify-content: flex-start;
+  gap: 10px;
+  row-gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
   flex-shrink: 0;
-  width: 449px;
-  height: 718px;
   position: relative;
 }
 
-.frame-10 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.temperature, .hygrometer, .pressure-gauge, .north-direction, .wind-speed-18-22 {
   flex-shrink: 0;
-  width: 329px;
-  height: 718px;
+  width: 47px;
+  height: 47px;
+  position: relative;
+  object-fit: cover;
+}
+
+.temperature2, .humidity, .pressure, .wind-direction, .wind-speed2 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Arial-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
   position: relative;
 }
 
-.frame-11 {
+.temp-data, .hum-data, .pres-data, .ws-data {
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 10px;
+  row-gap: 0px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-shrink: 0;
-  width: 82px;
-  height: 718px;
   position: relative;
 }
+
+._100-c, ._70, ._998-7-h-pa, .dir2, ._15-7-m-s {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Arial-Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  position: relative;
+}
+
+/* 반응형 디자인 추가 */
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 600%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 600%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .frame-16 {
+    flex-direction: row;
+    gap: 50%;
+    line-height: 400%;
+  }
+  .frame-12 {
+    flex-direction: row;
+    gap: 80px;
+    width: auto;
+    height: auto;
+  }
+  .frame-10, .frame-11 {
+    width: auto;
+    height: auto;
+  }
+  .frame-9 {
+    width: auto;
+    height: auto;
+  }
+  .nav {
+    font-size: 16px;
+  }
+}
+
 </style>
